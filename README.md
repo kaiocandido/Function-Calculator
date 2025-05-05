@@ -1,1 +1,1 @@
-"# calculadoraFunction" 
+Training Function factory
