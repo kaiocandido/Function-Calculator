@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    background-color: beige;
+    width: 400px;
+    text-align: center;
+    justify-content: center;
+    height: 500px;
+}
+
+.calculadora{
+    width: 400px;
+}
+
+.display{
+    font-size: 2em;
+    width: 100%;
+    text-align: right;
+}
+
+.btn{
+    width: 100%;
+    height: 50px;
+    font-size: 1em;
+    border: none;
+    background: gray;
+    color: white;
+}
+
+.btn:hover{
+    background: black;
+    cursor: pointer;
+}
+
+.btn-num-eq{
+    background: red;
+}
+
+
