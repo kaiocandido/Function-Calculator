@@ -1,9 +1,9 @@
-function criaCalculadora(){
-    return{
-        display: document.querySelector(".display"),
-        btnClear: document.querySelector(".btn-num-clear"),
+function Calculadora(){
+    
+        this.display = document.querySelector(".display");
+        this.btnClear = document.querySelector(".btn-num-clear");
         
-        cliqueiBtn: function(){
+        this.cliqueiBtn = function(){
             document.addEventListener("click", function(e){
                 const el = e.target;
 
@@ -24,34 +24,35 @@ function criaCalculadora(){
                 }
 
             }.bind(this));
-        },
+        };
 
-        btnParaDisplay: function(valor){
+        
+        this.btnParaDisplay = function(valor){
             this.display.value += valor;
-        },
+       };
 
-        inicia: function(){
+        this.inicia= function(){
             this.cliqueiBtn();
             this.pressEnter();
-        },
+        };
 
-        pressEnter: function() {
+        this.pressEnter = function() {
             this.display.addEventListener("keyup", (e) => {
                 if (e.key === "Enter") {
                     this.sum();
                 }
             });
-        },
+        };
 
-        deleteOne: function(){
+        this.deleteOne = function(){
             this.display.value = this.display.value.slice(0, -1);
-        },
+        };
 
-        clearDisplay: function(){
+        this.clearDisplay = function(){
             this.display.value = "";
-        },
+        };
 
-        sum: function() {
+        this.sum = function() {
             let conta = this.display.value;
         
             if (!/^[\d+\-*/().\s]+$/.test(conta)) {
@@ -70,14 +71,14 @@ function criaCalculadora(){
             } catch {
                 alert("CONTA INVÁLIDA");
             }
-        },
+        };
         
 
-        safeEval: function(expr) {
+        this.safeEval = function(expr) {
             return Function('"use strict"; return (' + expr + ')')();
-        }
+        };
 };
-}
 
-const calculadora = criaCalculadora();
+
+const calculadora = new Calculadora();
 calculadora.inicia();
